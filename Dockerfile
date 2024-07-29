@@ -5,7 +5,7 @@ FROM php:8.1-apache
 WORKDIR /var/www/html
 
 # Copy your PHP application files into the container
-COPY ./app/ /var/www/html/
+COPY ./Healet Free Website Template - Free-CSS/ /var/www/html/
 
 # Expose port 80
 EXPOSE 80
