@@ -1,11 +1,13 @@
-# Use the official Nginx image from the Docker Hub
-FROM nginx:alpine
+# Use the official PHP image with Apache
+FROM php:8.1-apache
 
-# Copy the HTML file into the Nginx server's default HTML directory
-COPY index.html /usr/share/nginx/html/
+# Set the working directory inside the container
+WORKDIR /var/www/html
 
-# Expose port 80 to the outside world
+# Copy your PHP application files into the container
+COPY ./app/ /var/www/html/
+
+# Expose port 80
 EXPOSE 80
 
-# The default command to run Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# The default command to start Apache is already set in the base image
